@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="./css/welcome-page.css" rel="stylesheet" type="text/css" />
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mada:wght@700&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<main class="page1">
+		<img class="logo" src="images/logo.png" height='97px' width='74px' />
+      <div class="uk-position-relative uk-dark" uk-slideshow="finite: true">
+        <div class="uk-position-small">
+          <ul class="uk-dotnav">
+            <li class="dots dots-active" uk-slideshow-item="0">
+              <a href="#">Item 1</a>
+            </li>
+            <li class="dots" uk-slideshow-item="1">
+              <a href="#">Item 2</a>
+            </li>
+            <li class="dots" uk-slideshow-item="2">
+              <a href="#">Item 3</a>
+            </li>
+            <li class="dots" uk-slideshow-item="3">
+              <a href="#">Item 4</a>
+            </li>
+            
+          </ul>
+        </div>
+        <ul class="uk-slideshow-items" style="height: 100%;">
+          <li>
+            <h1 class="halo">Halo!</h1>
+            <span class="selamat">Selamat datang di Deafscriber</span>
+            <div class='orang'>
+              <img src="./images/Welcome avatar.png" width='449px' height='301px' />
+            </div>
+
+            <button uk-slideshow-item="next" class="selanjutnya">
+              Selanjutnya
+            </button>
+          </li>
+          <li>
+            <h1 class="header-satu">Video ke teks</h1>
+            <span class="penjelasan-satu">Tambahkan subtitle pada video kamu dengan fitur video ke teks! Upload video kamu dan atur tampilan subtitle sesuka hati</span>
+
+            <div class="ilustrasi-satu">
+              <img src="./images/ilustrasi2.svg" width='259px' height='291px'/>
+            </div>
+
+            <button uk-slideshow-item="next" class="selanjutnya-satu">
+              Selanjutnya
+            </button>
+          </li>
+          <li>
+            <h1 class="header-dua">Audio ke teks</h1>
+            <span class="penjelasan-dua">Upload file MP3 kamu dan dapatkan hasil salinan audio dalam bentuk dokumen teks</span>
+
+            <div class="ilustrasi-dua">
+              <img src="./images/ilustrasi 5.svg" width='336px' height='339px'/>
+            </div>
+            
+            <button  uk-slideshow-item="next" class="selanjutnya-dua">
+              Selanjutnya
+            </button>
+          </li>
+          <li>
+            <h1 class="header-tiga">Pilih bahasa</h1>
+            <span class="penjelasan-tiga">Setelah dokumen diunggah, kamu bisa memilih bahasa yang akan dipakai dalam hasil transkrip. Video dan audiomu sudah siap untuk ditranskrip!</span>
+
+            <div class="ilustrasi-tiga">
+              <img src="./images/Group ilust.svg" width='351px' height='257px'/>
+            </div>
+
+            <div>
+            <a href="/upload-file.html">
+            <button class="button-mulai">
+              Mulai
+            </button>
+            </a>
+            </div>
+            </li>
+        </ul>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/js/uikit-icons.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+main {
+  width: 414px;
+  height: 896px;
+  background-image: url("../images/bg blue.svg");
+  margin: 0px;
+  display: flex !important;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+}
+
+#play-pause-button{
+  position: relative;
+  margin-top: 55px;
+}
+
+.Group147{
+  position: relative;
+  margin-left: 80px;
+}
+
+#timestamp-container {
+  margin: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#timestamp-container  span {
+  font-size: 20px;
+}
+
+#PauseButton{
+  position: relative;
+  margin-top: 55px;
+}
+
+.DividerLine{
+  position: relative;
+  margin-bottom: 50px;
+}
+
+#Subtitle{
+  font-family:'Mada', sans-serif;
+}
+
+#play-pause-button{
+  background: transparent;
+  border: none;
+}
+
+#audio-play-progress {
+  width: 100%;
+}
+

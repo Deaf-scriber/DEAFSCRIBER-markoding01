@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  width: 414px;
+  height: 100vh;
+  background-image: url("../images/bgtutorial.svg");
+  margin: 0px;
+  display: flex !important;
+  flex-direction: column;
+}
+span{
+  font-size: 20px;
+  color: #525252;
+}
+
+.orang{
+  width: 370px;
+  height: 222px;
+  margin-top: 28px;
+  margin-left: -25px;
+}
+
+.selanjutnya{
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-bottom: 65px;
+  margin-top: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #A690C9;
+  color: white;
+  height: 50px;
+  width: 90%;
+  border-radius: 17px;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.selanjutnya-satu{
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: block;
+  margin-top: 32px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #A690C9;
+  color: white;
+  height: 50px;
+  width: 90%;
+  border-radius: 17px;
+  text-align: center;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+.selanjutnya-dua {
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #A690C9;
+  color: white;
+  height: 50px;
+  width: 90%;
+  border-radius: 17px;
+  text-align: center;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));  
+}
+
+
+.button-mulai {
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  margin-top: 31px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #A690C9;
+  color: white;
+  height: 50px;
+  width: 90%;
+  border-radius: 17px;
+  text-align: center;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));  
+}
+
+.selamat{
+  margin-bottom: 96px;
+  margin-top: 8px;
+  margin-left: 5px;
+}
+.halo{
+  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 48px;
+  font-family: 'Mada', sans-serif;
+}
+
+.logo{
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+li.uk-active[uk-slideshow-item] a {
+  background: #000000 !important;
+}
+li[uk-slideshow-item] a {
+  background:#979C9E !important;
+}
+
+
+.uk-slideshow, .uk-slideshow-items {
+  flex-basis: 100%;
+    display: flex ;
+  flex-direction: column;
+  width: 360px;
+  margin: 0 auto;
+}
+.container{
+  display: flex;
+  margin-bottom: 21px;
+  margin-top: 24px;
+}
+
+main {
+  width: 414px;
+  height: 896px;
+  background-image: url("../images/bgtutorial.svg");
+}
+
+.ilustrasi {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.button-selanjutnya {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.ilustrasi-satu {
+  margin-left: 20px;
+  margin-top: 34px;
+}
+
+
+.header-satu{
+  margin-top: 6px;
+  font-size: 48px;
+  font-family: 'Mada', sans-serif;
+}
+
+.penjelasan-satu {
+  margin-top: 21px;
+  font-size: 20px;
+  display: block;
+}
+
+.header-dua{
+  margin-top: 6px;
+  font-size: 48px;
+  font-family: 'Mada', sans-serif;
+}
+
+.penjelasan-dua {
+  margin-top: 21px;
+  font-size: 20px;
+  display: block;
+}
+
+.ilustrasi-dua {
+  margin-top: 13px;
+  margin-left: 0px;
+}
+
+
+.header-tiga {
+  margin-top: 6px;
+  font-size: 48px;
+  font-family: 'Mada', sans-serif;
+}
+
+.penjelasan-tiga {
+  margin-top: 21px;
+  font-size: 20px;
+  display: block;
+}
+
+.ilustrasi-tiga {
+  margin-left: 5px;
+  margin-top: 60px;
+}

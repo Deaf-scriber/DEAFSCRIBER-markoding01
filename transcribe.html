@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="./css/transcribe.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  
+  <body>
+    <main>
+      <button id="play-pause-button" onclick="playFile()" onclick="buttonChanger()">
+        <div>
+          <img id="play-pause-image" src="./images/Group 144.svg" width='410px' height='407.04px'>
+        </div>
+      </button>
+      
+      <div img class="Group147">
+        <img src="./images/Group 147.svg" width='261px' height='37px'>
+      </div>
+      <div id="timestamp-container">
+        <span id="timestamp-current">
+          1:23
+        </span>
+        <span id="timestamp-totaltime">
+          3:00
+        </span>
+      </div>
+       <!-- ada tag <progress> untuk tahu progress play filenya berapa ya -->
+      <progress id="audio-play-progress" value="90" max="100">  </progress>
+
+      <p id="Subtitle">Test1</p>
+
+      <script src="https://cdn.rawgit.com/localForage/localForage/4ce19202/dist/localforage.min.js"></script>
+      <script src="transcribe-script.js"></script>
+  </body>
+</html>
+

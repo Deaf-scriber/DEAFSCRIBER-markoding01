@@ -1,0 +1,52 @@
+main {
+  width: 414px;
+  height: 896px;
+  background-image: url("../images/background-upload.svg");
+  /* background: green; */
+}
+
+.header {
+  position: relative;
+  /* /* display: flex;
+  align-items:center; */
+  padding-top: 83px;
+}
+
+/* ht secara default ada margin atas bawahnya, jadi harus ku kasih margin-bottom biar sejajar sama hamburger iconnya */
+h1{
+  text-align: center;
+  font-size:25px;
+  /* padding-top: 50px; */
+  font-family: 'Mada', sans-serif;
+  margin: 0;
+  /* margin-left: auto;
+  margim-right: auto; */
+}
+
+.logo-center {
+  margin-top: 110px;
+  margin-bottom: auto;
+  text-align: center; 
+}
+
+.upload-button {
+  text-align: center;
+  margin-top: -45px;
+}
+
+.button-bahasa {
+  margin-top: 110px;
+  text-align: center;
+}
+
+.hamburger{
+  position: absolute;
+  left: 57px;
+  /* padding-top: 83px; */
+}
+
+/* Bisa kamu ketik gini kamila
+url("../images/logo.png")
+harus dikasih tanda kutip
+
+.. di sini itu artinya naik satu folder */
