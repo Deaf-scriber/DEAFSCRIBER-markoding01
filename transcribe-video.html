@@ -6,54 +6,56 @@
     <meta name="viewport" content="width=device-width">
     <title>Deafscriber</title>
     <link href="./css/transcribe-video.css" rel="stylesheet" type="text/css" />
-  	<link rel="preconnect" href="https://fonts.googleapis.com">
+    	<link rel="preconnect" href="https://fonts.googleapis.com">
   	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  	<link href="https://fonts.googleapis.com/css2?family=Mada:wght@700&family=Staatliches&display=swap" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css2?family=Mada:wght@700&family=Staatliches&display=swap" rel="stylesheet">
   </head>
 
   
   <body>
     <main>
-      <h2>Subtitel</h2>
-
-      <div class="line">
-        <img src="./images/Line 58.svg"/>
-      </div>
-
-       <div class="vector">
-          <img src="./images/Group 143.svg" width='440px' height='440px'/>
-        </div>
-
-      <button onclick="playFile()" onclick="buttonChanger()">
-       <div class="play-button">
-        <img src="./images/play.svg" width='101px' height='90px'/>
-       </div>
+      <button id="play-pause-button" onclick="playFile()" onclick="buttonChanger()">
+        <div>
+          <img id="play-pause-image" src="./images/Group 144.svg" width='410px' height='407.04px'>
+          <video id="video" />
+         </div>
       </button>
-
-      <button onclick="pauseVid()" onclick="buttonChanger">
-        <div class="pause-button">
-          <img src="./images/Group 152.svg" width="45px" height="69px"/>
-      </button> 
-
-      <div class="second">
-        <img src="./images/Group 150 (1).svg"/>
+      
+      <div img class="Group147">
+        <img src="./images/Group 147.svg" width='261px' height='37px'>
       </div>
 
+      <div id="forward10" onclick="fastForward(10)">
+        <img src="./images/Forward10.svg" width="37px" height="37px"/>
+      </div>
+
+      <div id="rewind10" onclick="rewind(10)">
+        <img src="./images/Group 154.svg" width="37px" height="37px"/>
+      </div>
+
+            <div id="archive">
+        <img src="./images/bookmark.svg" width="35px" height="35px">
+      </div>
+
+      <div id="download">
+        <img src="./images/download.svg" width="32px" height="32px">
+      </div>
+      
       <div id="timestamp-container">
         <span id="timestamp-current">
-          0:00
+          1:23
         </span>
-        <span id="timestamp-total">
+        <span id="timestamp-totaltime">
           3:00
         </span>
       </div>
-
+       <!-- ada tag <progress> untuk tahu progress play filenya berapa ya -->
       <progress id="audio-play-progress" value="90" max="100">  </progress>
 
       <p id="Subtitle">Test1</p>
 
       <script src="https://cdn.rawgit.com/localForage/localForage/4ce19202/dist/localforage.min.js"></script>
-      <script src="transcribe-script.js"></script>
+      <script src="transcribe-video.js"></script>
   </body>
 </html>
 

@@ -1,6 +1,7 @@
 const playPauseButton = document.getElementById("play-pause-image")
 let transcriptionResult = ""
 const recognition = new webkitSpeechRecognition();
+const video = document.getElementById("video")
 
 const initialOptions = {
   // lang: "id-ID",
@@ -21,18 +22,18 @@ recognition.onresult = function (event) {
   subtitleResult()
 };
 
-let audio
 
 function playFile() {
   const blob = localforage.getItem('myfile').then(blob => {
     if (!blob) {
       return;
     }
-    audio = new Audio(URL.createObjectURL(blob));
+    const videoSrc = URL.createObjectURL(blob)
+    video.src = videoSrc
+    video.play()
     recognition.start()    
-    buttonChanger()
-    audio.play()
-    start(audio)
+    playPauseButton.style.display = "none"
+    start(video)
   }).catch(e => console.log(e));
 }
 
@@ -43,9 +44,6 @@ function fastForward(seconds) {
 function rewind(seconds) {
   audio.currentTime -= parseInt(seconds)
 }
-
-// coba bikin fungsi rewinds() ya
-
 /*function pauseFile() {
   const blob = localforage.getItem('myfile').then(blob => {
     if (!blob) {
@@ -75,7 +73,6 @@ function start(audio) {
       progressBar.value = audio.currentTime * 100 /audio.duration
     }, 1000)
 }
-
 
 function buttonChanger() {
   if (playPauseButton.src="./images/Group 144.svg")

@@ -11,38 +11,14 @@ body {
   margin: 0;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 0px;
-  padding-top: 54px;
- font-family: 'Mada', sans-serif;
+#play-pause-button{
+  position: relative;
+  margin-top: 55px;
 }
 
-.line {
-  text-align: center;
-}
-
-.vector {
-  margin-top: -30px;
-  margin-left: -10px;
-}
-
-.play-button {
-  margin-left: 10px;
-  margin-top: -280px;
-}
-
-.second {
-  text-align: center;
-  margin-top: -35px;
-}
-
-.playbar {
-  margin-top: 35px;
-}
-
-.pause-button {
-  display: none;
+.Group147{
+  position: relative;
+  margin-left: 80px;
 }
 
 #timestamp-container {
@@ -53,4 +29,59 @@ h2 {
 
 #timestamp-container  span {
   font-size: 20px;
+}
+
+#PauseButton{
+  position: relative;
+  margin-top: 55px;
+}
+
+.DividerLine{
+  position: relative;
+  margin-bottom: 50px;
+}
+
+#Subtitle{
+  font-family:'Mada', sans-serif;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#play-pause-button{
+  background: transparent;
+  border: none;
+}
+
+#audio-play-progress {
+  width: 100%;
+}
+
+#video {
+  width: 80%;
+  text-align: center;
+}
+
+#rewind10{
+  position: absolute;
+  margin-left: 151px;
+  margin-top: 435px;
+}
+
+#forward10{
+  position: absolute;
+  margin-top: 435px;
+  margin-left: 228px;
+}
+
+#download{
+  position: absolute;
+  margin-left: 303px;
+  margin-top: 435px;
+}
+
+#archive{
+  position: absolute;
+  margin-left: 76px;
+  margin-top: 435px;
 }

@@ -35,13 +35,17 @@
       <input id="upload-file" style="display: none" type="file" />
     </div>
 
-    <div class="button-bahasa">
-      <a href="/transcribe.html">
-      <input type="image" src="./images/Group 127.svg" name="bing" alt="bing"/>
-      <input type="image" src="./images/Group 128.svg" name="bindo" alt="bindo"/>
+    <div class="button-bahasa-Inggris"> 
+      <!-- <a href = "/transcribe.html"> -->
+        <input onclick="setLanguage('en-US');redirect()" type="image" src="./images/Group 127.svg" name="bing" alt="bing"/>
+      <!-- </a> -->
     </div>
-
-  </main> 
+    <div class="button-bahasa-indonesia">
+      <!-- <a href = "transcribe-indo.html"> -->
+        <input onclick="setLanguage('id');redirect()" type="image" src="./images/Group 128.svg" name="bindo" alt="bindo"/>
+      <!-- </a> -->
+    </div>
+  </main>
 
     <script src="https://cdn.rawgit.com/localForage/localForage/4ce19202/dist/localforage.min.js"></script>
     <script src="./script.js"></script>

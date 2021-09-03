@@ -1,14 +1,16 @@
 const uploadFIle = document.getElementById("upload-file")
-
+let file
 
 uploadFIle.onchange = e => {
-  const file = e.target.files[0]
+  file = e.target.files[0]
+  // <video>
 
-  /* if (this.files[0].type.indexOf('audio/') !== 0) {
-    log.textContent = 'Not an audio file...'
-    return;
-  } */
+  // if (this.files[0].type.indexOf('audio/') !== 0) {
+  //   log.textContent = 'Not an audio file...'
+  //   return;
+  // } 
   console.log("Uploaded!")
+  console.log("FILE", file)
   // myFile ini bisa apa aja sih, yg penting nanti pas mau ngambil filenya pakai myFile juga
   localforage.setItem('myfile', file).then(_ => {
     console.log("uploaded")
@@ -35,4 +37,22 @@ recognition.onresult = function (event) {
   bg.style.backgroundColor = color;
 }
 
-button.style.display = "block"
+const setLanguage = lang => {
+  localStorage.setItem("bahasa", lang)
+}
+
+const videoFileType = ["mp4", "mov", "wmv", "avi"]
+const audioFileType = ["mp3", "3gp", "wav"]
+
+const redirect = () => {
+  let target = ""
+  if(file.name.endsWith("mp4")) {
+    target = "transcribe-video.html"
+  } else {
+    target = "transcribe.html"
+  }
+  
+  window.location.href = target
+}
+
+// button.style.display = "block"
