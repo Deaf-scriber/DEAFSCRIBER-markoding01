@@ -38,11 +38,11 @@ function playFile() {
 }
 
 function fastForward(seconds) {
-  audio.currentTime += parseInt(seconds)
+  video.currentTime += parseInt(seconds)
 }
 
 function rewind(seconds) {
-  audio.currentTime -= parseInt(seconds)
+  video.currentTime -= parseInt(seconds)
 }
 /*function pauseFile() {
   const blob = localforage.getItem('myfile').then(blob => {
