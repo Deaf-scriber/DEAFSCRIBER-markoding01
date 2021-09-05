@@ -5,7 +5,7 @@ const video = document.getElementById("video")
 
 const initialOptions = {
   // lang: "id-ID",
-  lang: "en-US",
+  lang: localStorage.getItem("bahasa"),
   continuous: true,
   interimResults: true,
   // onend: reset(),
@@ -22,6 +22,27 @@ recognition.onresult = function (event) {
   subtitleResult()
 };
 
+function saveTextAsFile(textToWrite, fileNameToSaveAs) {
+  var textFileAsBlob = new Blob([textToWrite], { type: 'text/plain' });
+  var downloadLink = document.createElement("a");
+  downloadLink.download = fileNameToSaveAs;
+  downloadLink.innerHTML = "Download File";
+  if (window.webkitURL != null) {
+    // Chrome allows the link to be clicked
+    // without actually adding it to the DOM.
+    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+  }
+  else {
+    // Firefox requires the link to be added to the DOM
+    // before it can be clicked.
+    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+  }
+
+  downloadLink.click();
+}
 
 function playFile() {
   const blob = localforage.getItem('myfile').then(blob => {
@@ -31,7 +52,7 @@ function playFile() {
     const videoSrc = URL.createObjectURL(blob)
     video.src = videoSrc
     video.play()
-    recognition.start()    
+    recognition.start()
     playPauseButton.style.display = "none"
     start(video)
   }).catch(e => console.log(e));
@@ -43,6 +64,10 @@ function fastForward(seconds) {
 
 function rewind(seconds) {
   video.currentTime -= parseInt(seconds)
+}
+
+function downloadText() {
+  saveTextAsFile(transcriptionResult, "testfile.txt")
 }
 /*function pauseFile() {
   const blob = localforage.getItem('myfile').then(blob => {
@@ -60,28 +85,38 @@ function subtitleResult() {
   document.getElementById("Subtitle").innerHTML = transcriptionResult;
 }
 
-function start(audio) {
-    const progressBar = document.getElementById("audio-play-progress")
-    const currentTime = document.getElementById("timestamp-current")
-    const totalTime = document.getElementById("timestamp-totaltime")
+function secondsToTimestamp(seconds) {
+  // var hours = Math.floor(seconds / 60 / 60);
+  var minutes = Math.floor(seconds / 60)
+  var seconds = seconds % 60;
+  var formatted = minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
 
-    setInterval(() => {
-      // update current time
-      currentTime.textContent = parseInt(audio.currentTime)
-      totalTime.textContent = parseInt(audio.duration)
-      // update progress bar
-      progressBar.value = audio.currentTime * 100 /audio.duration
-    }, 1000)
+  return formatted
+}
+
+function start(audio) {
+  const progressBar = document.getElementById("audio-play-progress")
+  const currentTime = document.getElementById("timestamp-current")
+  const totalTime = document.getElementById("timestamp-totaltime")
+
+
+
+  setInterval(() => {
+    // update current time
+    currentTime.textContent = secondsToTimestamp(parseInt(audio.currentTime))
+    totalTime.textContent = secondsToTimestamp(parseInt(audio.duration))
+    // update progress bar
+    progressBar.value = audio.currentTime * 100 / audio.duration
+  }, 1000)
 }
 
 function buttonChanger() {
-  if (playPauseButton.src="./images/Group 144.svg")
-  {
+  if (playPauseButton.src = "./images/Group 144.svg") {
     console.log(playPauseButton)
-    playPauseButton.src="./images/Pause button.svg";
+    playPauseButton.src = "./images/Pause button.svg";
   }
-  else
-  {
-    playPauseButton.src="./images/Group 144.svg";
+  else {
+    playPauseButton.src = "./images/Group 144.svg";
   }
 }
+

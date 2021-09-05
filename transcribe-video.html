@@ -21,38 +21,39 @@
          </div>
       </button>
       
-      <div img class="Group147">
-        <img src="./images/Group 147.svg" width='261px' height='37px'>
-      </div>
+      
 
-      <div id="forward10" onclick="fastForward(10)">
-        <img src="./images/Forward10.svg" width="37px" height="37px"/>
-      </div>
+      <div id="group-buttons">
 
-      <div id="rewind10" onclick="rewind(10)">
-        <img src="./images/Group 154.svg" width="37px" height="37px"/>
-      </div>
+        <div id="rewind10" onclick="rewind(10)">
+          <img src="./images/Group 154.svg" width="37px" height="37px"/>
+        </div>
 
-      <div id="archive">
-        <img src="./images/bookmark.svg" width="35px" height="35px">
-      </div>
+        <div id="pauseButton">
+          <img src="./images/pauseButtonBlack.svg" width='37px' height='37px'>
+        </div>
 
-      <div id="download">
-        <img src="./images/download.svg" width="32px" height="32px">
-      </div>
+        <div id="download" onclick="downloadText()">
+          <img src="./images/download.svg" width="32px" height="32px">
+        </div>
+
+        <div id="forward10" onclick="fastForward(10)">
+          <img src="./images/Forward10.svg" width="37px" height="37px"/>
+        </div>
+     </div>
       
       <div id="timestamp-container">
         <span id="timestamp-current">
-          1:23
+          00:00
         </span>
         <span id="timestamp-totaltime">
-          3:00
+          00:00
         </span>
       </div>
        <!-- ada tag <progress> untuk tahu progress play filenya berapa ya -->
-      <progress id="audio-play-progress" value="90" max="100">  </progress>
+      <progress id="audio-play-progress" value="0" max="100">  </progress>
 
-      <p id="Subtitle">Test1</p>
+      <p id="Subtitle" style="height: 420px;overflow:scroll;">...</p> 
 
       <script src="https://cdn.rawgit.com/localForage/localForage/4ce19202/dist/localforage.min.js"></script>
       <script src="transcribe-video.js"></script>
