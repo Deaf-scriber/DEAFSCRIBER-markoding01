@@ -106,8 +106,8 @@ function start(audio) {
 
   setInterval(() => {
     // update current time
-    currentTime.textContent = parseInt(audio.currentTime)
-    totalTime.textContent = parseInt(audio.duration)
+    currentTime.textContent = secondsToTimestamp(parseInt(audio.currentTime))
+    totalTime.textContent = secondsToTimestamp(parseInt(audio.duration))
     // update progress bar
     progressBar.value = audio.currentTime * 100 /audio.duration
   }, 1000)
