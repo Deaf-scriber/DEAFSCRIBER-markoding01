@@ -1,7 +1,11 @@
+const largePlayButton = document.getElementById("large-play-button")
 const playPauseButton = document.getElementById("play-pause-image")
-let transcriptionResult = ""
 const recognition = new webkitSpeechRecognition();
 const video = document.getElementById("video")
+
+let videoIsPlaying = false
+let transcriptionResult = ""
+let previousTranscriptionResult = ""
 
 const initialOptions = {
   // lang: "id-ID",
@@ -53,10 +57,28 @@ function playFile() {
     video.src = videoSrc
     video.play()
     recognition.start()
-    playPauseButton.style.display = "none"
+    largePlayButton.style.display = "none"
     start(video)
+    buttonChanger("pause")
+    videoIsPlaying = true
   }).catch(e => console.log(e));
 }
+
+function toggleVideo() {
+  if(videoIsPlaying) {
+    video.pause();
+    buttonChanger("play")
+    recognition.stop()
+    previousTranscriptionResult = previousTranscriptionResult + " " + transcriptionResult
+  } else {videoIsPlaying
+    video.play()
+    buttonChanger("pause")
+    recognition.start()
+  }
+
+  videoIsPlaying = !videoIsPlaying
+}
+
 
 function fastForward(seconds) {
   video.currentTime += parseInt(seconds)
@@ -67,22 +89,15 @@ function rewind(seconds) {
 }
 
 function downloadText() {
-  saveTextAsFile(transcriptionResult, "testfile.txt")
+  const finalText = getFinalTranscriptionResult()
+
+  saveTextAsFile(finalText, "testfile.txt")
 }
-/*function pauseFile() {
-  const blob = localforage.getItem('myfile').then(blob => {
-    if (!blob) {
-      return;
-    }
-    const audio = new Audio(URL.createObjectURL(blob));
-    recognition.start()    
-    buttonChanger()
-    audio.pause()
-  }).catch(e => console.log(e));
-} */
 
 function subtitleResult() {
-  document.getElementById("Subtitle").innerHTML = transcriptionResult;
+  const finalText = getFinalTranscriptionResult()
+  
+  document.getElementById("Subtitle").innerHTML =  finalText
 }
 
 function secondsToTimestamp(seconds) {
@@ -110,13 +125,24 @@ function start(audio) {
   }, 1000)
 }
 
-function buttonChanger() {
-  if (playPauseButton.src = "./images/Group 144.svg") {
-    console.log(playPauseButton)
-    playPauseButton.src = "./images/Pause button.svg";
-  }
-  else {
-    playPauseButton.src = "./images/Group 144.svg";
+function buttonChanger(action) {
+  switch(action) {
+    case "play":
+      playPauseButton.src = "./images/playButtonBlack.svg";
+      break;
+    case "pause":
+      playPauseButton.src = "./images/pauseButtonBlack.svg";
+      break
+    default:
+      //asdsadasd
   }
 }
 
+
+function getFinalTranscriptionResult() {
+  let finalText = previousTranscriptionResult
+  if(videoIsPlaying) {
+    finalText += + " " + transcriptionResult
+  }
+  return finalText
+}

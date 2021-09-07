@@ -11,7 +11,7 @@ body {
   margin: 0;
 }
 
-#play-pause-button{
+#large-play-button {
   margin-top: 55px;
   background: transparent;
   border: none;
@@ -57,6 +57,13 @@ body {
 
 #video {
   width: 80%;
-  text-align: center;
+  /* text-align: center; */
+  margin: 0 auto;
+  margin-bottom: 20px;
+  /* singkatan dari */
+  /* margin: 0 auto 0 auto
+          atas kanan bawah kiri *
+  /* margin: 1px 2px 1px 2px'
+  margin: 1px 2px; */
 }
 

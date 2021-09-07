@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -10,16 +9,14 @@
   	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	  <link href="https://fonts.googleapis.com/css2?family=Mada:wght@700&family=Staatliches&display=swap" rel="stylesheet">
   </head>
-
-  
   <body>
     <main>
-      <button id="play-pause-button" onclick="playFile()" onclick="buttonChanger()">
+      <button id="large-play-button" onclick="playFile()" onclick="buttonChanger()">
         <div>
-          <img id="play-pause-image" src="./images/Group 144.svg" width='410px' height='407.04px'>
-          <video id="video" />
+          <img src="./images/Group 144.svg" width='410px' height='407.04px'>
          </div>
       </button>
+      <video id="video"></video>
       
       
 
@@ -29,8 +26,8 @@
           <img src="./images/Group 154.svg" width="37px" height="37px"/>
         </div>
 
-        <div id="pauseButton">
-          <img src="./images/pauseButtonBlack.svg" width='37px' height='37px'>
+        <div id="pauseButton" onclick="toggleVideo()">
+          <img id="play-pause-image" src="./images/pauseButtonBlack.svg" width='37px' height='37px'>
         </div>
 
         <div id="download" onclick="downloadText()">

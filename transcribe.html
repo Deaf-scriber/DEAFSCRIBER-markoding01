@@ -14,14 +14,11 @@
 
   <body>
     <main>
-      <button id="play-pause-button" onclick="playFile()" onclick="buttonChanger()">
+      <button id="play-pause-button" onclick="buttonChanger()">
         <div>
-          <img id="play-pause-image" src="./images/Group 144.svg" width='410px' height='407.04px'>
+          <img id="play-pause-image" src="./images/Group 144.svg" width='410px' height='407.04px' onclick="playFile()" >
          </div>
       </button>
-
-
-
 
       <div id="group-buttons">       
 
@@ -29,12 +26,12 @@
           <img src="./images/Group 153.svg" width="37px" height="37px"/>
         </div>
 
-        <div id="pauseButton">
+        <div id="pauseButton" onclick="pauseAudio()">
           <img src="./images/pauseButtonBlack.svg" width="35px" height="35px">
         </div>
 
         <div id="download" onclick="downloadText()">
-          <img src="./images/download.svg" width="32px" height="32px">
+          <img src="./images/download.svg" width="35px" height="35px">
         </div>
 
         <div id="forward10" onclick="fastForward(10)">

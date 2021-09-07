@@ -43,6 +43,19 @@ function saveTextAsFile(textToWrite, fileNameToSaveAs) {
   downloadLink.click();
 }
 
+function buttonChanger() {
+  if (playPauseButton.src="./images/Group 144.svg")
+  {
+    console.log(playPauseButton)
+    playPauseButton.src="./images/Pause button.svg";
+  }
+  else if (playPauseButton.src != "./images/Group 144.svg")
+  {
+    console.log(playPauseButton)
+    playPauseButton.src="./images/Group 144.svg";
+  }
+}
+
 
 let audio
 
@@ -57,6 +70,10 @@ function playFile() {
     audio.play()
     start(audio)
   }).catch(e => console.log(e));
+}
+
+function pauseAudio() {
+  audio.pause()
 }
 
 function fastForward(seconds) {
@@ -114,14 +131,3 @@ function start(audio) {
 }
 
 
-function buttonChanger() {
-  if (playPauseButton.src="./images/Group 144.svg")
-  {
-    console.log(playPauseButton)
-    playPauseButton.src="./images/Pause button.svg";
-  }
-  else
-  {
-    playPauseButton.src="./images/Group 144.svg";
-  }
-}
