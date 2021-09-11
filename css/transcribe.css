@@ -12,7 +12,6 @@ body {
 }
 
 #large-play-button {
-  margin-top: 55px;
   background: transparent;
   border: none;
 }
@@ -64,4 +63,58 @@ body {
   margin-top: 55px;
   background: transparent;
   border: none;
+}
+
+/* Sound bar animation */
+
+#sound-bar {
+  width: 410px;
+  height: 410px;
+  display: none;
+  margin: 0 auto;
+  margin-top: 55px;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes height {
+  from  {
+    height: 19px;
+  }
+  to {
+    height: 150px;
+  }
+}
+
+@keyframes heightpaused {
+  to {
+    height: 10px;
+  }
+}
+
+.bar {
+  animation: height infinite alternate both ease-in 0.5s;
+  width: 15px;
+  background-color: blue;
+  margin-right: 5px;
+}
+
+.paused .bar {
+  animation-play-state: paused;
+}
+
+.bar-1 {
+  animation-delay: 0.1s;
+}
+.bar-2 {
+  animation-delay: 0.2s;
+}
+.bar-3 {
+  animation-delay: 0.4s;
+}
+.bar-4 {
+  animation-delay: 1s;
+}
+.bar-5 {
+  animation-delay: 0.8s;
 }

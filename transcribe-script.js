@@ -1,7 +1,7 @@
 const largePlayButton = document.getElementById("large-play-button") 
 const playPauseButton = document.getElementById("play-pause-image")
+const soundBar = document.getElementById("sound-bar")
 const recognition = new webkitSpeechRecognition();
-
 
 let audioIsPlaying = false
 let transcriptionResult = ""
@@ -65,6 +65,7 @@ function playFile() {
     largePlayButton.style.display = "none"
     start(audio)
     buttonChanger("pause")
+    soundBar.style.display = "flex"
     audioIsPlaying = true
   }).catch(e => console.log(e));
 }
@@ -72,12 +73,17 @@ function playFile() {
 function toggleAudio() {
   if(audioIsPlaying) {
     audio.pause();
+    
     buttonChanger("play")
+    soundBar.classList.add("paused")
     recognition.stop()
     previousTranscriptionResult = previousTranscriptionResult + " " + transcriptionResult
   } else {audioIsPlaying
     audio.play()
+    
     buttonChanger("pause")
+    soundBar.classList.remove("paused")
+    
     recognition.start()
   }
   
