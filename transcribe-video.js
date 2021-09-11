@@ -54,6 +54,7 @@ function playFile() {
       return;
     }
     const videoSrc = URL.createObjectURL(blob)
+    video.style.display = "block"
     video.src = videoSrc
     video.play()
     recognition.start()
@@ -70,7 +71,7 @@ function toggleVideo() {
     buttonChanger("play")
     recognition.stop()
     previousTranscriptionResult = previousTranscriptionResult + " " + transcriptionResult
-  } else {videoIsPlaying
+  } else {
     video.play()
     buttonChanger("pause")
     recognition.start()
@@ -127,13 +128,14 @@ function start(audio) {
 
 function buttonChanger(action) {
   switch(action) {
+    case "pause":
+      playPauseButton.src = "./images/pauseButtonBlack.svg";
+      break;
     case "play":
       playPauseButton.src = "./images/playButtonBlack.svg";
       break;
-    case "pause":
-      playPauseButton.src = "./images/pauseButtonBlack.svg";
-      break
     default:
+      console.log("default")
       //asdsadasd
   }
 }

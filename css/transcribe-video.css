@@ -56,10 +56,12 @@ body {
 }
 
 #video {
+  display: none;
   width: 80%;
   /* text-align: center; */
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-top: 80px;
+  margin-bottom: 80px;
   /* singkatan dari */
   /* margin: 0 auto 0 auto
           atas kanan bawah kiri *

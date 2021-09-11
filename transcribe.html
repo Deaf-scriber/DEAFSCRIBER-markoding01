@@ -14,9 +14,9 @@
 
   <body>
     <main>
-      <button id="play-pause-button" onclick="buttonChanger()">
+      <button id="large-play-button" onclick="playFile()" onclick="buttonChanger()">
         <div>
-          <img id="play-pause-image" src="./images/Group 144.svg" width='410px' height='407.04px' onclick="playFile()" >
+          <img id="play-pause-image" src="./images/Group 144.svg" width='410px' height='407.04px' >
          </div>
       </button>
 
@@ -26,20 +26,20 @@
           <img src="./images/Group 153.svg" width="37px" height="37px"/>
         </div>
 
-        <div id="pauseButton" onclick="pauseAudio()">
-          <img src="./images/pauseButtonBlack.svg" width="35px" height="35px">
+        <div id="pauseButton" onclick="toggleAudio()">
+          <img id="play-pause-image" src="./images/pauseButtonBlack.svg" width='37px' height='37px'>
         </div>
 
         <div id="download" onclick="downloadText()">
           <img src="./images/download.svg" width="35px" height="35px">
         </div>
 
-        <div id="forward10" onclick="fastForward(10)">
+        <div id="forward10" onclick="fastForward(10)">  
           <img src="./images/Forward10.svg" width="37px" height="37px"/>
         </div>
      </div>
-        
-        
+       
+         
       <div id="timestamp-container">
         <span id="timestamp-current">
           00:00

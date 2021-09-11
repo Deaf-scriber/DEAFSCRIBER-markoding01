@@ -1,6 +1,11 @@
+const largePlayButton = document.getElementById("large-play-button") 
 const playPauseButton = document.getElementById("play-pause-image")
-let transcriptionResult = ""
 const recognition = new webkitSpeechRecognition();
+
+
+let audioIsPlaying = false
+let transcriptionResult = ""
+let previousTranscriptionResult = ""
 
 const initialOptions = {
   // lang: "id-ID",
@@ -43,20 +48,6 @@ function saveTextAsFile(textToWrite, fileNameToSaveAs) {
   downloadLink.click();
 }
 
-function buttonChanger() {
-  if (playPauseButton.src="./images/Group 144.svg")
-  {
-    console.log(playPauseButton)
-    playPauseButton.src="./images/Pause button.svg";
-  }
-  else if (playPauseButton.src != "./images/Group 144.svg")
-  {
-    console.log(playPauseButton)
-    playPauseButton.src="./images/Group 144.svg";
-  }
-}
-
-
 let audio
 
 function playFile() {
@@ -64,17 +55,35 @@ function playFile() {
     if (!blob) {
       return;
     }
-    audio = new Audio(URL.createObjectURL(blob));
-    recognition.start()    
-    buttonChanger()
+    const audioSrc = URL.createObjectURL(blob)
+    // oalah belum dimasukin sourcenya
+    audio = new Audio()
+    audio.src = audioSrc
+    
     audio.play()
+    recognition.start()
+    largePlayButton.style.display = "none"
     start(audio)
+    buttonChanger("pause")
+    audioIsPlaying = true
   }).catch(e => console.log(e));
 }
 
-function pauseAudio() {
-  audio.pause()
+function toggleAudio() {
+  if(audioIsPlaying) {
+    audio.pause();
+    buttonChanger("play")
+    recognition.stop()
+    previousTranscriptionResult = previousTranscriptionResult + " " + transcriptionResult
+  } else {audioIsPlaying
+    audio.play()
+    buttonChanger("pause")
+    recognition.start()
+  }
+  
+  audioIsPlaying = !audioIsPlaying
 }
+
 
 function fastForward(seconds) {
   audio.currentTime += parseInt(seconds)
@@ -85,25 +94,15 @@ function rewind(seconds) {
 }
 
 function downloadText() {
-  saveTextAsFile(transcriptionResult, "testfile.txt")
+  const finalText = getFinalTranscriptionResult()
+
+  saveTextAsFile(finalText, "testfile.txt")
 }
 
-// coba bikin fungsi rewinds() ya
-
-/*function pauseFile() {
-  const blob = localforage.getItem('myfile').then(blob => {
-    if (!blob) {
-      return;
-    }
-    const audio = new Audio(URL.createObjectURL(blob));
-    recognition.start()    
-    buttonChanger()
-    audio.pause()
-  }).catch(e => console.log(e));
-} */
-
 function subtitleResult() {
-  document.getElementById("Subtitle").innerHTML = transcriptionResult;
+  const finalText = getFinalTranscriptionResult()
+  
+  document.getElementById("Subtitle").innerHTML =  finalText
 }
 
 function secondsToTimestamp(seconds) {
@@ -121,6 +120,7 @@ function start(audio) {
   const totalTime = document.getElementById("timestamp-totaltime")
 
 
+
   setInterval(() => {
     // update current time
     currentTime.textContent = secondsToTimestamp(parseInt(audio.currentTime))
@@ -130,4 +130,24 @@ function start(audio) {
   }, 1000)
 }
 
+function buttonChanger(action) {
+  switch(action) {
+    case "play":
+      playPauseButton.src = "./images/playButtonBlack.svg";
+      break;
+    case "pause":
+      playPauseButton.src = "./images/pauseButtonBlack.svg";
+      break
+    default:
+      //asdsadasd
+  }
+}
 
+
+function getFinalTranscriptionResult() {
+  let finalText = previousTranscriptionResult
+  if(audioIsPlaying) {
+    finalText += + " " + transcriptionResult
+  }
+  return finalText
+}

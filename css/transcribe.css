@@ -11,7 +11,7 @@ body {
   margin: 0;
 }
 
-#play-pause-button{
+#large-play-button {
   margin-top: 55px;
   background: transparent;
   border: none;
@@ -60,3 +60,8 @@ body {
   width: 100%;
 }
 
+#large-play-button {
+  margin-top: 55px;
+  background: transparent;
+  border: none;
+}
